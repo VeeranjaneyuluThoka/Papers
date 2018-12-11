@@ -1,0 +1,156 @@
+ML - references
+----------------
+
+https://modelzoo.co/model/deep-learning-of-binary-hash-codes
+
+
+Virtual makeup/face alignment:
+-----------------------------
+https://vcl.iti.gr/virtual-makeup/
+https://github.com/MarekKowalski/DeepAlignmentNetwork
+https://towardsdatascience.com/detecting-facial-features-using-deep-learning-2e23c8660a7a
+https://github.com/hriddhidey/visage
+https://github.com/topics/face-landmark-detection
+https://github.com/astorfi/lip-reading-deeplearning
+https://github.com/topics/face-alignment
+https://github.com/bruceyang2012/Face-Alignment-with-simple-cnn
+https://navoshta.com/facial-with-tensorflow/ - Detecting facial keypoints with TensorFlow 
+http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/
+https://github.com/moliusimon/csdm
+https://github.com/chengzhengxin/sdm
+https://github.com/Ning-Ding/SDM
+
+https://github.com/mrgloom/Face-landmarks-detection-benchmark
+http://phg1024.github.io/CSCE625/
+
+https://github.com/facebookresearch/supervision-by-registration - pytorch
+
+https://www.youtube.com/watch?v=OWNSc57k5Gc
+
+Face recognization:
+-------------------
+https://github.com/davidsandberg/facenet
+
+
+DAN approach:
+-------------
+python preprocessing.py --input_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/helen/trainset" --output_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/train_output" --istrain=True --repeat=10 --img_size=112 --mirror_file=./Mirror68.txt
+
+python DAN_V2.py -ds 1 --data_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/train_output" --model_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/models" --data_dir_test=None -nlm 68 -te=15 -epe=1 -mode train
+
+python DAN_V2.py -ds 2 --data_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/train_output" --model_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/models" --data_dir_test=None -nlm 68 -te=45 -epe=1 -mode train
+
+test:
+python preprocessing.py --input_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/helen/testset" --output_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/test_output" --istrain=False --img_size=112
+
+Eval:
+python DAN_V2.py -ds 2 --data_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/test_output" -nlm 68 -mode eval
+
+Predict:
+python DAN_V2.py -ds 1 --data_dir="/nfs/data/Veeru/VM/DL_methods/data/outpy.avi" --model_dir="/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/models" -nlm 68 -mode predict
+
+/nfs/data/Veeru/VM/DL_methods/data/ibug_300W_large_face_landmark_dataset/models
+
+linux commands:
+--------------
+!pip freeze
+which pip
+which python
+
+standford tutrials:
+-------------------
+http://cs230.stanford.edu/syllabus.html#Module_4
+http://cs229.stanford.edu/syllabus.html
+https://www.youtube.com/watch?v=5u4G23_OohI&index=2&list=PLA89DCFA6ADACE599
+http://cs231n.stanford.edu/
+
+https://blog.paralleldots.com/data-science/deep-learning/best-and-free-resources-to-understand-of-deep-learning/?fbclid=IwAR30BGGylygJHm9Zd0W5sbTvoCvvbrcfjculYirTaMfTSeusNTEZ0k1xNqc
+
+Reinforcement learning:
+https://sites.google.com/view/deep-rl-bootcamp/lectures
+
+
+tensorflow - slim:
+------------------
+https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim
+https://pythonprogramming.net/cnn-tensorflow-convolutional-nerual-network-machine-learning-tutorial/
+
+https://www.youtube.com/watch?v=YCXFceVKHTk&index=28&list=PLIivdWyY5sqJxnwJhe3etaK7utrBiPBQ2
+
+
+
+face landmarks:
+---------------
+https://www.youtube.com/watch?v=OWNSc57k5Gc
+
+https://github.com/greatyao/facealignment/tree/master/lbf - c++
+
+https://github.com/4ndrejm/facefit - SDM/menpo python based impl
+
+face landmarks dataset:
+-----------------------
+https://ibug.doc.ic.ac.uk/resources/300-W/
+
+dlib forums:
+------------
+https://github.com/davisking/dlib/issues/164
+https://sourceforge.net/p/dclib/discussion/442518/thread/e80e526e/
+https://github.com/davisking/dlib/issues/359
+
+
+
+visual search using keras:
+-------------------------
+http://www.hackevolve.com/building-a-reverse-image-search-engine/
+
+
+video retrieval:
+----------------
+https://medium.com/@ahmdtaha/video-retrieval-based-on-deep-convolutional-neural-network-f83193106997
+
+
+CNN study:
+------------
+https://adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html
+
+
+imagelab:
+-------
+https://github.com/NaturalIntelligence/imglab
+
+
+ian goodfellow book chapters discussion:
+------------------------------------------
+https://www.youtube.com/channel/UCF9O8Vj-FEbRDA5DcDGz-Pg/videos
+
+
+DL courses online:
+https://www.marktechpost.com/2018/11/17/list-of-free-deep-learning-courses-online/?fbclid=IwAR0juv3VXmYrSUH3YkR4HcPojgzmXelRtZNWqjxQwzIhl1e7P8cyInep4es
+
+end-to-end-ML pipeline:
+-----------------------
+https://spandan-madan.github.io/DeepLearningProject/
+
+Intro to non-linear-optimization:
+---------------------------------
+http://www.mit.edu/~9.520/spring08/Classes/optlecture.pdf
+
+https://blog.paralleldots.com/data-science/deep-learning/best-and-free-resources-to-understand-of-deep-learning/?fbclid=IwAR30BGGylygJHm9Zd0W5sbTvoCvvbrcfjculYirTaMfTSeusNTEZ0k1xNqc
+
+https://towardsdatascience.com/probability-concepts-explained-bayesian-inference-for-parameter-estimation-90e8930e5348
+https://towardsdatascience.com/a-tour-of-the-top-10-algorithms-for-machine-learning-newbies-dde4edffae11
+
+cs229:
+https://www.youtube.com/watch?v=nLKOQfKLUks&index=4&list=PLA89DCFA6ADACE599
+cs20:
+https://web.stanford.edu/class/cs20si/syllabus.html
+
+Advanced deep learning and Reinforcement learning:
+--------------------------------------------------
+https://www.youtube.com/watch?v=JO0LwmIlWw0&list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs&index=2
+
+https://towardsdatascience.com/numpy-vs-tensorflow-speed-on-matrix-calculations-9cbff6b3ce04
+
+http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review
+
+https://pypi.org/project/NearPy/
