@@ -1,0 +1,77 @@
+gcloud compute --project "vuu-research" ssh --zone "europe-west1-b" "tf-1" - to trigger vuu
+gcloud compute scp --recurse tf-1:/mnt/disks/slow1/video_processing/frames/breaking_bad_s01e07 ./
+gcloud compute instances start tf-1 --project "vuu-research" --zone "europe-west1-b"
+
+commands:
+--------------
+python video_splitter.py
+
+python extract_feature_vector.py --input_frames_path="/mnt/Video/video_processing/video_files/small_video_clip_frames/" --features_type="original"
+
+python extract_features.py --video_file_path="/mnt/Video/video_processing/video_files/original_video_clips/breaking_bad_s01e01.mkv" --split_option="random" --features_type="scalars" --start_pos=230 --split_length=1
+
+python detect_clip.py --test_features_path="/mnt/Video/video_processing/video_files/small_video_clip_frames_rand/random_clips_frames/breaking_bad_s01e01_208/breaking_bad_s01e01_208-1/scalars" --features_DB_path="/mnt/Video/video_processing/video_files/small_video_clip_frames" --comparision_option="scalars"
+
+
+Approach 2:
+===========
+
+Extract all the frames from a large video clip:
+----------------------------------------------
+python frames_features_extract.py --input_path="/mnt/Video/video_processing/video_files/original_video_clips/" --frames_path="/mnt/disks/slow1/video_processing/frames/"
+
+Extract a few frames from the given starting position:
+------------------------------------------------------
+python frames_features_extract.py --input_path="/mnt/Video/video_processing/video_files/original_video_clips/breaking_bad_s01e04.mkv" --frames_path="/mnt/Video/video_processing/video_files/test_frames/" --is_testing=True --start_pos=200 --no_of_frames=20 --batch_size=20
+
+testing script:
+---------------
+python compute_similarity_matrix.py --query_features_path="/mnt/Video/video_processing/video_files/test_frames/breaking_bad_s01e04/" --search_features_path="/mnt/disks/slow1/video_processing/frames/"
+
+
+python example_feat_extract.py --network inception_v4 --checkpoint /mnt/Video/video_processing/inception-2015-12-05/inception_v4.ckpt --image_path /mnt/disks/slow1/video_processing/frames/IMG_3268/ --out_file ./features.h5 --layer_names Logits
+
+ffmpeg:
+--------
+https://www.bugcodemaster.com/article/extract-images-frame-frame-video-file-using-ffmpeg
+https://github.com/alibugra/frame-extraction
+https://medium.com/@alibugra/extract-frames-as-an-image-from-video-files-using-ffmpeg-65b52d3d97db
+
+
+triggering jypeter notebook:
+----------------------------
+jupyter notebook --ip=10.132.0.2
+
+http://35.187.35.177:6006
+
+
+http://places.csail.mit.edu/user/download.php
+username:VeeranjaneyuluT
+pwd:Deepu1Yashu
+
+
+9980506638 - rajendra oticon
+
+Datastructure and algorithm questions:
+--------------------------------------
+https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0
+
+
+https://selfservice.udi.no/?epslanguage=en-GB - to fill visa app
+UN:veeranjaneyulu_thoka@yahoo.co.in
+PWD:Deepu1Yashu
+
+https://online.vfsglobal.com/GlobalAppointment/?q=shSA0YnE4pLF9Xzwon%2Fx%2FD7iv2ugvZ5d5YCUV9wLJWqjJuMDeKfuWlwsWnxhZMfHhyrmoIcu03JjDAp8PtZ8uw%3D%3D - to book an appointment
+
+UN:veeranjaneyulu_thoka@yahoo.co.in
+pwd:Deepu1Yashu*
+
+
+https://tagosdesign.greythr.com/login.do
+
+
+('shape of train_labels_node:', TensorShape([Dimension(64)]))
+('shape of logits:', TensorShape([Dimension(64), Dimension(10)]))
+
+('flattened layer shape:', TensorShape([Dimension(64), Dimension(3136)]))
+('fc1 shape:', TensorShape([Dimension(64), Dimension(1024)]))
